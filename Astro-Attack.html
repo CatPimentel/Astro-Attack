@@ -1,64 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Processando o Canva pós a tag</title>
-        <meta>
-    </head>
-    <body>
-        <canvas id="meu_canvas"  width="500" height="500"></canvas>
-        <script>
-         //Canva e Contexto
-            var canvas = document.getElementById('meu_canvas');
-            var context = canvas.getContext('2d');
-            //Desenhar im retângulo 
-            
-            context.fillStyle = 'aqua';
-            context.fillRect(50,50,100,100);
 
-            context.lineWidth = 3;
-            context.strokeStyle = 'hotpink';
-            context.strokeRect(50,160,100,100);
+<head>
+   <title>Retângulo</title>
+   <meta charset="UTF-8">
+</head>
 
-            context.fillStyle = 'hotpink';
-            context.fillRect(160,50,100,100);
-            
-            context.lineWidth = 3;
-            context.strokeStyle = 'hotpink';
-            context.strokeRect(160,160,100,100);
-
-            context.fillStyle = 'skyblue';
-            context.fillRect(160,160,100,100);
-            
-            context.lineWidth = 3;
-            context.strokeStyle = 'violet';
-            context.strokeRect(160,50,100,100);
-
-            context.beginPath();
-              context.moveTo(275, 450);  // Ponto inicial
-              context.lineTo(350, 250);
-              context.lineTo(425, 450);
-              context.lineTo(250, 320);
-              context.lineTo(450, 320);
-              context.lineTo(275, 450);
-
-           
-            context.lineWidth = 2;
-            context.strokeStyle = 'gold';
-            context.stroke();
-
-        var x = 0;
-        function animar() {
-            context.fillStyle = 'pink'
-            context.clearRect (0,0, canvas.width, canvas.height);
-            context.beginPath();
-            context.arc(x, 150, 50, 0, 2* Math.PI);
-            context.fill();
-            x += 2;
-            requestAnimationFrame(animar);
-         }
-         animar();
-    
-        </script>
-    </body>
+<body>
+   <canvas id="meu_canvas" width="500" height="500"></canvas>
+   <script>
+      // Canvas e contexto
+      var canvas = document.getElementById('meu_canvas');
+      var context = canvas.getContext('2d');
+      
+      // Desenhar um retângulo
+      context.fillRect(50, 50, 100, 100);
+	  context.strokeRect(50, 160, 100, 100);
+	  
+	  // Preenchimento vermelho
+      context.fillStyle = 'red';
+      context.fillRect(160, 50, 100, 100);
+      
+      // Contorno azul, com espessura de 3px
+      context.lineWidth = 3;
+      context.strokeStyle = 'blue';
+      context.strokeRect(160, 50, 100, 100);
+	  
+	  // Preenchimento verde
+      context.fillStyle = 'green';
+      context.fillRect(160, 160, 100, 100);
+      
+      // Contorno amarelo, com espessura de 3px
+      context.lineWidth = 3;
+      context.strokeStyle = 'yellow';
+      context.strokeRect(160, 160, 100, 100);
+	  
+	  // Iniciar o caminho (apaga desenhos anteriores)
+      context.beginPath();
+      
+      // Desenhar uma estrela
+      context.moveTo(275, 450);  // Ponto inicial
+      context.lineTo(350, 250);
+      context.lineTo(425, 450);
+      context.lineTo(250, 320);
+      context.lineTo(450, 320);
+      context.lineTo(275, 450);
+      
+      // Configurar a linha
+      context.lineWidth = 2;
+      context.strokeStyle = 'red';
+      
+      // Traçar as linhas do caminho
+      context.stroke();
+      var x = 0;
+function animar() {
+  context.fillStyle = 'pink';  
+  context.clearRect(0, 0, canvas.width, 
+                            canvas.height);
+  context.beginPath();
+  context.arc(x, 150, 50, 0, 2 * Math.PI);
+  context.fill();
+  x += 2;
+  requestAnimationFrame(animar);
+}
+animar();
+   </script>
+</body>
 
 </html>

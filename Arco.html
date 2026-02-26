@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arco</title>
+        <meta>
+    </head>
+    <body>
+        <canvas id="meu_canvas"  width="500" height="500"></canvas>
+        <script>
+    
+         var canvas = document.getElementById('meu_canvas');
+         var context = canvas.getContext('2d');
+         context.fillStyle = 'gray';
+         context.strokeStyle = 'black';
+         context.lineWidth = 2;
+         context.beginPath();
+          context.arc(50,50,40,90*Math.PI/180,270*Math.PI/180,
+            false);
+            context.fill();
+            context.stroke();
+            context.arc(150,50,40,90*Math.PI/180,270*Math.PI/180,
+            true);
+            context.fill();
+            context.stroke();
+            context.beginPath();
+            context.arc(250, 50, 40, 0, 2*Math.PI)
+            context.fill();
+            context.stroke();
+        // Carregando uma imahem programaticamente
+        
+        </script>
+    </body>
+
+</html>
